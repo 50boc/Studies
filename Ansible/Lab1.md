@@ -32,6 +32,23 @@ Now let's use Ansible to connect to an AWS server. I had already created an EC2 
 
 Running Ansible command came with some issue because of AWS using python3 command to run python program. We need to tell Ansible to use python3 as the default python. Configuration of the ansible server is saved under /etc/ansible/hosts. This host file keep an inventory of the servers that Ansible can use. In order to use python3 the following needed to be done.
 
+```shell
+$: Vagrant box add geerlingguy/centos7
+$: Vagrant init geerlingguy/centos7
+$: Vagrant up
+```
+
+```yaml
+---
+- hosts: all
+become: yes
+tasks:
+- name: Ensure NTP (for time synchronization) is installed.
+  yum: name=ntp state=present
+- name: Ensure NTP is running.
+  service: name=ntpd state=started enabled=yes 		
+...
+```
 
 
 ## Conclusion
