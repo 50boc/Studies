@@ -23,7 +23,11 @@ I am using Ubuntu 16.04. I first started by installing Ansible with this command
 `sudo apt-get install -y ansible `
 
 Now let's use Ansible to connect to an AWS server. I had already created an EC2 instance therefore I will not showcase that process. But In order to get access to my EC2 through SSH I had to go through some loophole.
+<<<<<<< HEAD
 1. First I had to create a ssh rsa key pair on my local machine `ssh-keygen -t rsa` #this created “/.ssh/id_rsa" and "/.ssh/id_rsa.pub"`
+=======
+1. First I had to create a ssh rsa key pair on my local machine `ssh-keygen -t rsa` this created “/.ssh/id_rsa" and "/.ssh/id_rsa.pub"
+>>>>>>> a43be129afcfde0e97f1bd9da643a707e2ab5be6
 2. Now login on the aws server through ssh I was able to tun the following commands.`useradd -m <yourname> ` `sudo su <yourname>` `cd ` `mkdir -p ~/.ssh` `touch ~/.ssh/authorized_keys` `chmod -R 700 ~/.ssh` `chmod 600 ~/.ssh/*`
 3. The I uploaded my local ~/.ssh/id_rsa.pub to the server and passed it to the new authorized_keys files that I created `cat id_rsa.pub  > ~/.ssh/authorized_keys`
 4. Login for Ansible was accepted after that.
