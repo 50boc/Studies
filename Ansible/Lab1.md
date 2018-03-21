@@ -44,7 +44,7 @@ Visit each software website to downloaded both vagrant and virtualBox.
 Vagrant is a tool for building and managing virtual machine environments in a single workflow. When setting up vagrant boxes following need to be done.
 
 
->```shell
+```shell
 name@name: vagrant box add geerlingguy/centos7
 name@name: vagrant init geerlingguy/centos7
 name@name: vagrant up
@@ -63,6 +63,7 @@ Some of the functionality include
  - Provisioning: Vagrant allow you to automatically install software, alter configurations, and more on the machine as part of the vagrant up process.
 
  I was able to make ansible work on vagrant by configuring the Vagrantfile.
+ 
 ![vagrantfile](images/2018/03/lab1_vagrantfile.png)
  --
 
@@ -70,7 +71,7 @@ Some of the functionality include
 
 We set up a very basic playbook “playbook.yml” in the same folder as the Vagrantfile. [Playbooks][0abf06a5] are Ansible’s configuration, deployment, and orchestration language. They can describe a policy you want your remote systems to enforce, or a set of steps in a general IT process. One can use [this link][fbb9b680] to get started with YAML. For Ansible, nearly every YAML file starts with a list. Each item in the list is a list of key/value pairs, commonly called a “hash” or a “dictionary”. So, we need to know how to write lists and dictionaries in YAML. Network Time Protocol (NTP) is a networking protocol for clock synchronization between computer systems over packet-switched, variable-latency data
 
->```yaml
+```yaml
 # Marker showing that the rest of the document will be formatted in YAM
 ---
 # This line tells Ansible to which hosts this playbook applies.
