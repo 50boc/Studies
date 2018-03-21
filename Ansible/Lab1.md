@@ -63,6 +63,7 @@ Some of the functionality include
  - Provisioning: Vagrant allow you to automatically install software, alter configurations, and more on the machine as part of the vagrant up process.
 
  I was able to make ansible work on vagrant by configuring the Vagrantfile.
+ 
 ![vagrantfile](images/2018/03/lab1_vagrantfile.png)
  --
 
