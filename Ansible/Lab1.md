@@ -29,7 +29,7 @@ Now let's use Ansible to connect to an AWS server. I had already created an EC2 
 
 1. First I had to create a ssh rsa key pair on my local machine `ssh-keygen -t rsa` this created “/.ssh/id_rsa" and "/.ssh/id_rsa.pub"
 
-2. Now login on the aws server through ssh I was able to tun the following commands.`useradd -m <yourname> ` `sudo su <yourname>` `cd ` `mkdir -p ~/.ssh` `touch ~/.ssh/authorized_keys` `chmod -R 700 ~/.ssh` `chmod 600 ~/.ssh/*`
+2. Now login on the aws server through ssh I was able to tun the following commands.`useradd -m <yourname> ` `sudo su <yourname>` ` ` `mkdir -p ~/.ssh` `touch ~/.ssh/authorized_keys` `chmod -R 700 ~/.ssh` `chmod 600 ~/.ssh/*`
 3. The I uploaded my local ~/.ssh/id_rsa.pub to the server and passed it to the new authorized_keys files that I created `cat id_rsa.pub  > ~/.ssh/authorized_keys`
 4. Login for Ansible was accepted after that.
 
